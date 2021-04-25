@@ -1,0 +1,51 @@
+﻿// ConsoleApplication1.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+//
+
+
+#include"pch.h"
+#include<stdio.h>
+#include<math.h>
+
+int main(void) {
+	int total=0;
+	int real_floot= 13; //在这里定义实际的菱形的层数
+	int floot = real_floot + 1;//运算中考虑的菱形的层数会加一层再删去一层
+	for (int i = 1; i <= floot; i++) {
+		if (i == floot / 2 + 1) {
+			continue;
+		}
+		if (i <= floot / 2) {
+			for (int t = 0; t < floot / 2 - i; t++) {
+				printf(" ");
+			}
+			for (int y = 0; y < 2 * i - 1; y++) {
+				printf("*");
+			}
+			printf("\n");
+		}
+		else
+		{
+			for (int t = 1; t < i- floot / 2; t++) {
+				printf(" ");
+			}
+			for (int y = 0; y < 2*(floot-i)+1; y++) {
+				printf("*");
+			}
+			printf("\n");
+		}
+		
+	}
+	return 0;
+}
+
+
+// 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
+// 调试程序: F5 或调试 >“开始调试”菜单
+
+// 入门提示: 
+//   1. 使用解决方案资源管理器窗口添加/管理文件
+//   2. 使用团队资源管理器窗口连接到源代码管理
+//   3. 使用输出窗口查看生成输出和其他消息
+//   4. 使用错误列表窗口查看错误
+//   5. 转到“项目”>“添加新项”以创建新的代码文件，或转到“项目”>“添加现有项”以将现有代码文件添加到项目
+//   6. 将来，若要再次打开此项目，请转到“文件”>“打开”>“项目”并选择 .sln 文件
